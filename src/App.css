@@ -1,0 +1,82 @@
+:root {
+  --background-color-1: rgba(29, 41, 72, 1);    
+  --background-color-2: rgba(20, 29, 51, 1);  
+  --background-color-3: rgba(15, 22, 40, 1);  
+  --background-color-4: rgba(5, 10, 22, 1);       
+}
+
+body{
+  background: url('/images/Solar System bg.png'), linear-gradient(-80deg, var(--background-color-4),var(--background-color-3),var(--background-color-2),var(--background-color-1));
+  background-size: 130rem, auto;
+  background-position: center 5%;
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  min-height: 100vh;
+  margin: 0;
+}
+
+.logo {
+  font-size: 60px;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+.planets {
+  position: relative;
+}
+
+.sun-img {
+  width: 400px;
+}
+
+.planet-left,
+.planet-right {
+  width: 150px;
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.8));
+}
+
+.l1 { margin-left: 40px; }
+.l2 { margin-left: 10px; }
+.l3 { margin-left: 5px; }
+
+.r1 { margin-right: 40px; }
+.r2 { margin-right: 40px; }
+.r3 { margin-right: 10px; }
+
+/* Responsive for tablets & mobiles */
+@media (max-width: 992px) {
+  .logo { font-size: 50px; margin: 15px 0; }
+  .sun-img { width: 300px; }
+  .planet-left, .planet-right { width: 120px; }
+}
+
+@media (max-width: 768px) {
+  /* Navbar stack & spacing fix */
+  .d-flex.justify-content-between.align-items-center {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .l1, .l2, .l3, .r1, .r2, .r3 { margin: 5px !important; }
+
+  /* Sun info stack */
+  .row.text-center > .col-md-3 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .fs-2 { font-size: 1.5rem; }
+  .fs-5 { font-size: 1rem; }
+
+  /* Planets vertical stack */
+  .planets .row { flex-direction: column; }
+  .col-3, .col-6 { width: 100%; text-align: center; margin-bottom: 20px; }
+  .planet-left p, .planet-right span { font-size: 1.5rem; margin-top: 10px; }
+
+  .sun-img { width: 250px; }
+  .planet-left, .planet-right { width: 100px; }
+
+  /* Background fix for mobile */
+  body { background-attachment: scroll; background-size: cover; }
+}
